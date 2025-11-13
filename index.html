@@ -23,7 +23,8 @@
             @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl;
         }
         .badge {
-            @apply inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full;
+            /* Updated badge style for a more 'tag-like' appearance */
+            @apply inline-block text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-md border;
         }
     </style>
 </head>
@@ -84,31 +85,34 @@
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-blue-200 pb-2">Frontend</h3>
                         <div class="flex flex-wrap">
-                            <span class="badge">JavaScript</span>
-                            <span class="badge">TypeScript</span>
-                            <span class="badge">React</span>
-                            <span class="badge">Next.js (App Router)</span>
-                            <span class="badge">Tailwind CSS</span>
+                            <!-- Added color and border classes -->
+                            <span class="badge bg-blue-100 text-blue-800 border-blue-200">JavaScript</span>
+                            <span class="badge bg-blue-100 text-blue-800 border-blue-200">TypeScript</span>
+                            <span class="badge bg-blue-100 text-blue-800 border-blue-200">React</span>
+                            <span class="badge bg-blue-100 text-blue-800 border-blue-200">Next.js (App Router)</span>
+                            <span class="badge bg-blue-100 text-blue-800 border-blue-200">Tailwind CSS</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-green-200 pb-2">Backend</h3>
                         <div class="flex flex-wrap">
-                            <span class="badge bg-green-100 text-green-800">Node.js</span>
-                            <span class="badge bg-green-100 text-green-800">Express (간단 API)</span>
-                            <span class="badge bg-green-100 text-green-800">파일 기반 저장</span>
-                            <span class="badge bg-green-100 text-green-800">Redis (선택적 캐시)</span>
+                            <!-- Added border classes for consistency -->
+                            <span class="badge bg-green-100 text-green-800 border-green-200">Node.js</span>
+                            <span class="badge bg-green-100 text-green-800 border-green-200">Express (간단 API)</span>
+                            <span class="badge bg-green-100 text-green-800 border-green-200">파일 기반 저장</span>
+                            <span class="badge bg-green-100 text-green-800 border-green-200">Redis (선택적 캐시)</span>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-yellow-200 pb-2">DevOps & Tools</h3>
                         <div class="flex flex-wrap">
-                            <span class="badge bg-yellow-100 text-yellow-800">Git</span>
-                            <span class="badge bg-yellow-100 text-yellow-800">Docker</span>
-                            <span class="badge bg-yellow-100 text-yellow-800">Vercel</span>
-                            <span class="badge bg-yellow-100 text-yellow-800">Figma</span>
-                            <span class="badge bg-yellow-100 text-yellow-800">Axios</span>
-                            <span class="badge bg-yellow-100 text-yellow-800">Zod</span>
+                            <!-- Added border classes for consistency -->
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Git</span>
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Docker</span>
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Vercel</span>
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Figma</span>
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Axios</span>
+                            <span class="badge bg-yellow-100 text-yellow-800 border-yellow-200">Zod</span>
                         </div>
                     </div>
                 </div>
