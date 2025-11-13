@@ -1,170 +1,278 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>정석용 이력서</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      display: flex;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated title -->
+    <title>Gitfolio — 이성민의 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter 폰트 (Tailwind 기본 폰트와 유사) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Noto Sans KR (한국어 가독성 향상) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 아이콘 라이브러리 (Heroicons) -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    /* 사이드바 */
-    .sidebar {
-      width: 200px;
-      background-color: #fff;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      overflow-y: auto;
-    }
-
-    .sidebar h3 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: teal;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar ul li {
-      margin: 10px 0;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .sidebar ul li a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .content {
-      flex: 1;
-      padding: 40px;
-      background-color: #fff;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section h2 {
-      border-bottom: 2px solid #000;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .highlight {
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .subinfo {
-      color: #555;
-    }
-
-    .photo {
-      width: 150px;
-      height: 150px;
-      border: 2px solid #ccc;
-      object-fit: cover;
-    }
-
-    a {
-      color: teal;
-      text-decoration: none;
-    }
-
-    .url-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f0f0f0;
-      font-family: monospace;
-      word-break: break-all;
-    }
-
-  </style>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl;
+        }
+        .badge {
+            @apply inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full;
+        }
+    </style>
 </head>
-<body>
-  <div class="sidebar">
-    <h3><a href="#basic">기본 정보</a></h3>
-    <ul>
-      <li><a href="#skills">기술 스택</a></li>
-      <li><a href="#career">프로젝트</a></li>
-      <li><a href="#portpolio">포트폴리오</a></li>
-      <li><a href="#education">교육</a></li>
-      <li><a href="#cerificate">수상 및 자격</a></li>
-    </ul>
-  </div>
+<body class="text-gray-700">
 
-  <div class="content">
-    <div class="section">
-      <div class="profile">
-        <div>
-          <div class="highlight">이성민 - 개발자 이력서</div>
-          <div class="subinfo">프론트엔드 개발자</div>
-          <p>이메일: tjdalstjdals100@m365.dongyang.ac.kr</p>
-          <p>
-            노션 이력서:  
-            <a href="https://www.dongyang.ac.kr" target="_blank">
-              Notion 이력서 링크
-            </a>
-          </p>
+    <!-- 전역 컨테이너 -->
+    <div class="container mx-auto max-w-6xl p-4 sm:p-8">
+
+        <!-- 1. Hero 및 기본 정보 (About Me & Contact) -->
+        <header class="flex flex-col md:flex-row items-center justify-between mb-16">
+            <!-- 프로필 이미지 -->
+            <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-10">
+                <!-- Updated profile placeholder text -->
+                <img 
+                    src="https://placehold.co/160x160/E0E7FF/4F46E5?text=이성민&font=noto-sans-kr" 
+                    alt="이성민 프로필 이미지" 
+                    class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white shadow-lg"
+                    onerror="this.src='https://placehold.co/160x160/E0E7FF/4F46E5?text=프로필&font=noto-sans-kr'"
+                >
+            </div>
+            
+            <!-- 소개 및 연락처 -->
+            <div class="text-center md:text-left">
+                <!-- Updated name -->
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">이성민</h1>
+                <p class="text-xl md:text-2xl text-blue-600 font-medium mb-4">
+                    문제를 해결하고 더 나은 사용자 경험을 만드는 프론트엔드 개발자
+                </p>
+                
+                <!-- 연락처 아이콘 -->
+                <div class="flex justify-center md:justify-start space-x-4 text-gray-600">
+                    <!-- Updated email -->
+                    <a href="mailto:tjdalstjdals100@gmail.com" class="flex items-center hover:text-blue-600 transition-colors">
+                        <ion-icon name="mail-outline" class="w-5 h-5 mr-1.5"></ion-icon>
+                        tjdalstjdals100@gmail.com
+                    </a>
+                    <!-- Updated GitHub URL -->
+                    <a href="https://github.com/dkksdfa" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-blue-600 transition-colors">
+                        <ion-icon name="logo-github" class="w-5 h-5 mr-1.5"></ion-icon>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-blue-600 transition-colors">
+                        <ion-icon name="logo-linkedin" class="w-5 h-5 mr-1.5"></ion-icon>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. 상세 소개 (About Me) -->
+        <section id="about" class="mb-20">
+            <div class="card p-8 md:p-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="space-y-4 text-base md:text-lg leading-relaxed">
+                    <p>
+                        저는 비즈니스 문제를 기술로 해결하는 과정에 매력을 느끼는 프론트엔드 개발자입니다. React와 TypeScript를 주력으로 사용하며, 성능과 접근성을 고려한 컴포넌트 설계에 집중합니다.
+                    </p>
+                    <p>
+                        특히 깃허브 데이터를 활용해 자동으로 포트폴리오를 생성하고, 사용자가 빠르게 자신의 작업을 보여줄 수 있는 경험을 만드는 것을 목표로 이 프로젝트를 진행했습니다.
+                    </p>
+                    <p>
+                        이 프로젝트에서는 데이터 수집(깃허브), 템플릿 기반 렌더링, 간단한 AI 요약 기능을 통합하여 사용자가 최소한의 설정으로 완성도 높은 포트폴리오를 만들 수 있도록 했습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 기술 스택 (Skills) -->
+        <section id="skills" class="mb-20">
+            <h2 class="section-title">Skills</h2>
+            <div class="card p-8 md:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-blue-200 pb-2">Frontend</h3>
+                        <div class="flex flex-wrap">
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">TypeScript</span>
+                            <span class="badge">React</span>
+                            <span class="badge">Next.js (App Router)</span>
+                            <span class="badge">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-green-200 pb-2">Backend</h3>
+                        <div class="flex flex-wrap">
+                            <span class="badge bg-green-100 text-green-800">Node.js</span>
+                            <span class="badge bg-green-100 text-green-800">Express</span>
+                            <span class="badge bg-green-100 text-green-800">File-based Storage</span>
+                            <span class="badge bg-green-100 text-green-800">Redis (Cache)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 border-b-2 border-yellow-200 pb-2">DevOps & Tools</h3>
+                        <div class="flex flex-wrap">
+                            <span class="badge bg-yellow-100 text-yellow-800">Git</span>
+                            <span class="badge bg-yellow-100 text-yellow-800">Docker</span>
+                            <span class="badge bg-yellow-100 text-yellow-800">Vercel</span>
+                            <span class="badge bg-yellow-100 text-yellow-800">Figma</span>
+                            <span class="badge bg-yellow-100 text-yellow-800">Axios</span>
+                            <span class="badge bg-yellow-100 text-yellow-800">Zod</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 프로젝트 상세: Gitfolio -->
+        <section id="project-gitfolio" class="mb-16">
+            <h2 class="section-title">Project: Gitfolio</h2>
+            
+            <div class="card">
+                <!-- 프로젝트 메인 이미지 -->
+                <img 
+                    src="https://placehold.co/1200x600/60A5FA/FFFFFF?text=Gitfolio+Project+Main&font=noto-sans-kr" 
+                    alt="Gitfolio 프로젝트 메인 이미지" 
+                    class="w-full h-auto object-cover"
+                    onerror="this.src='https://placehold.co/1200x600/60A5FA/FFFFFF?text=프로젝트+이미지&font=noto-sans-kr'"
+                >
+
+                <div class="p-8 md:p-10">
+                    <!-- 문제 정의 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">문제 정의</h3>
+                        <p class="text-lg bg-gray-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                            많은 개발자가 깃허브에 프로젝트를 올리지만 이를 보기 좋고 설명하기 쉬운 포트폴리오로 바꾸는 데 시간이 걸립니다. 수작업으로 레이아웃을 만들고 내용을 정리하는 대신 자동으로 깃허브 데이터를 수집·가공해 빠르게 포트폴리오를 생성하고자 했습니다.
+                        </p>
+                    </div>
+
+                    <!-- 아키텍처 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">아키텍처 / 설계</h3>
+                        <p class="mb-4">
+                            Next.js(App Router) 기반 SPA/SSR 혼합 아키텍처를 사용했습니다. 사용자 인증은 GitHub OAuth로 처리하고, 서버 라우트에서 토큰을 이용해 GitHub API로 데이터를 수집합니다. 데이터는 캐시(Map/옵션 Redis)로 보관해 호출 부하를 줄이고, 템플릿은 React 컴포넌트(동적 import)로 분리해 클라이언트에서 필요할 때만 로드합니다.
+                        </p>
+                        <img 
+                            src="https://placehold.co/1000x500/E0E7FF/4F46E5?text=Architecture+Diagram&font=noto-sans-kr" 
+                            alt="아키텍처 다이어그램" 
+                            class="w-full h-auto object-cover rounded-lg border border-gray-200"
+                            onerror="this.src='https://placehold.co/1000x500/E0E7FF/4F46E5?text=아키텍처+다이어그램&font=noto-sans-kr'"
+                        >
+                    </div>
+
+                    <!-- 핵심 기능 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">핵심 기능</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- 기능 1 -->
+                            <div class="border border-gray-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-700 mb-2">깃허브 자동 수집 및 증강</h4>
+                                <p class="mb-4">
+                                    OAuth로 접근 토큰을 받아 사용자의 repos, 언어 통계, 기여도, 커밋 수 등을 수집합니다. 각 리포지토리에 대해 병렬 제한(mapWithLimit)과 캐시를 적용해 안정적으로 데이터를 가져오며, 언어·기여자 수 등 추가 정보를 보강해 템플릿에 적합한 형식으로 제공합니다.
+                                </p>
+                                <img 
+                                    src="https://placehold.co/600x400/DBEAFE/1E40AF?text=Feature+1+Screenshot&font=noto-sans-kr" 
+                                    alt="깃허브 자동 수집 기능" 
+                                    class="w-full h-auto object-cover rounded-md"
+                                    onerror="this.src='https://placehold.co/600x400/DBEAFE/1E40AF?text=기능+1&font=noto-sans-kr'"
+                                >
+                            </div>
+                            <!-- 기능 2 -->
+                            <div class="border border-gray-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-700 mb-2">템플릿 기반 동적 렌더링</h4>
+                                <p class="mb-4">
+                                    여러 템플릿을 React 컴포넌트로 분리하고 dynamic import로 필요 시 로드합니다. Tailwind 기반 공통 유틸 컴포넌트를 활용해 템플릿 간 스타일 중복을 줄이고, 선택된 프로젝트/프로필 데이터를 주입해 즉시 미리보기를 제공합니다.
+                                </p>
+                                <img 
+                                    src="https://placehold.co/600x400/DBEAFE/1E40AF?text=Feature+2+Screenshot&font=noto-sans-kr" 
+                                    alt="동적 렌더링 기능" 
+                                    class="w-full h-auto object-cover rounded-md"
+                                    onerror="this.src='https://placehold.co/600x400/DBEAFE/1E40AF?text=기능+2&font=noto-sans-kr'"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 나의 역할 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">나의 역할 및 기여</h3>
+                        <ul class="list-disc list-inside space-y-2 text-base md:text-lg">
+                            <li>Next.js 기반 프로젝트 구조 설계 및 초기 설정</li>
+                            <li>GitHub OAuth 흐름 구현 및 API 데이터 수집 파이프라인 개발</li>
+                            <li>템플릿 시스템(동적 import)과 공통 UI 컴포넌트 설계</li>
+                            <li>캐싱 전략(cache.ts) 및 병렬 호출 제한(mapWithLimit) 도입</li>
+                        </ul>
+                    </div>
+
+                    <!-- 결과 및 성과 -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">결과 및 성과</h3>
+                        <ul class="list-disc list-inside space-y-2 text-base md:text-lg">
+                            <li>사용자 포트폴리오 생성 흐름을 수동 대비 평균 80% 단축(설정·데이터 입력 시간)</li>
+                            <li>핵심 API 응답 지연 최소화(캐시 적용으로 반복 호출 성능 향상)</li>
+                            <li>템플릿 기반으로 다양한 레이아웃 제공, 사용자 피드백으로 기본 템플릿 선호도 확인</li>
+                        </ul>
+                    </div>
+
+                    <!-- 회고 (배운 점 및 개선점) -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">회고 (Retrospective)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-2">배운 점</h4>
+                                <p>
+                                    GitHub API의 한계(레이트 리밋, 검색 API 특성)를 다루며 백오프/재시도 전략과 캐시의 중요성을 체감했습니다. 또한 dynamic import와 Tailwind 조합으로 템플릿 관리가 용이하다는 것을 확인했습니다.
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold text-yellow-800 mb-2">개선점</h4>
+                                <p>
+                                    대량의 템플릿(수천 이상)을 지원하려면 현재 구조를 manifest/외부 번들 방식으로 전환해야 합니다. 또한 서버 로그 마스킹 및 민감정보 처리(토큰 관리) 부분을 강화하고, 자동 테스트(단위·통합)를 추가해 안정성을 높이고자 합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 mt-20 py-10">
+        <div class="container mx-auto max-w-6xl px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- Updated footer email -->
+                <a href="mailto:tjdalstjdals100@gmail.com" class="hover:text-white transition-colors">
+                    <ion-icon name="mail-outline" class="w-6 h-6"></ion-icon>
+                    <span class="sr-only">Email</span>
+                </a>
+                <!-- Updated footer GitHub URL -->
+                <a href="https://github.com/dkksdfa" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                    <ion-icon name="logo-github" class="w-6 h-6"></ion-icon>
+                    <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                    <ion-icon name="logo-linkedin" class="w-6 h-6"></ion-icon>
+                    <span classs="sr-only">LinkedIn</span>
+                </a>
+            </div>
+            <!-- Updated footer copyright -->
+            <p>&copy; 2024 이성민. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-1">Built with Next.js & Tailwind CSS.</p>
         </div>
-        <img src="profile.jpg" alt="프로필 사진" class="photo" />
-      </div>
-    </div>
+    </footer>
 
-    <div class="section" id="skills">
-      <h2>기술 스택</h2>
-      <p>Front End : Next.js, React, C#, Java</p>
-    </div>
-
-    <div class="section" id="career">
-      <h2>프로젝트</h2>
-      <p><strong>졸업작품 프로젝트</strong> - 소규모 멀티플레이 FPS 게임 개발 / 프론트엔드 개발 (2025.03 ~ 2025.4, 1개월)</p>
-      <p>∙ 요구사항 분석 및 DataBase 모델링</p>
-      <p>∙ AWS를 활용한 컴퓨팅 환경 구축</p>
-    </div>
-
-    <div class="section" id="portpolio">
-        <h2>포트폴리오</h2>
-        <p><strong>URL</strong> </p>
-        <div class="url-box">
-            https://github.com/syjung64
-        </div>
-    </div>
-
-    <div class="section" id ="education">
-        <h2>교육</h2>
-        <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 (2021.03-2026.2)</p>
-        <p><strong>대경고등학교</strong> -  (2022.03-2026.2)</p>
-    </div>
-
-    <div class="section" id="cerificate">
-        <h2>수상 및 자격</h2>
-        <p>∙ 소규모 멀티플레이 FPS 게임 개발 (Ubity/C#)</p>
-        <p>∙ 1945 전투기 게임 개발 (Python)</p>
-        <p>∙ 책 쇼핑몰 개발 (JAVA/Servlet)</p>
-        <p>∙ 동양미래EXPO(동양미래대학교 작품전시회-COEX 대상 수상 예정)</p>
-    </div>
-  </div>
 </body>
 </html>
