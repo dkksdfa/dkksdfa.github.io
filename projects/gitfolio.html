@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이성민 | Frontend Developer Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Noto Sans KR) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #4f46e5, #06b6d4);
+        }
+
+        /* placeholder pattern */
+        .bg-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+            <div class="text-2xl font-bold text-gradient cursor-pointer" onclick="scrollToSection('home')">
+                Lee Seongmin
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-indigo-600 transition-colors uppercase tracking-wider">About</a>
+                <a href="#skills" class="hover:text-indigo-600 transition-colors uppercase tracking-wider">Skills</a>
+                <a href="#project" class="hover:text-indigo-600 transition-colors uppercase tracking-wider">Project</a>
+                <a href="#contact" class="hover:text-indigo-600 transition-colors uppercase tracking-wider">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <!-- Background Decoration -->
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50 via-white to-white -z-10">
+        </div>
+
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+
+                <!-- Profile Image (Hero Section) -->
+                <div class="mb-8 relative group">
+                    <div
+                        class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-white border-4 border-white shadow-xl overflow-hidden relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                            <!-- Image Placeholder: 실제 이미지 URL이 있다면 src 속성에 넣으세요 -->
+                            <img src="/assets/gitfolio/profile.jpg" alt="이성민" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-2 -right-2 bg-indigo-600 text-white p-2 rounded-full border-4 border-white shadow-lg">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-50 rounded-full border border-indigo-100">
+                    Frontend Developer
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-snug text-slate-900">
+                    생활 속 작은 불편도 놓치지 않고,<br />
+                    <span class="text-indigo-600">기술로 더 나은 해결책</span>을 제시합니다.
+                </h1>
+
+                <p class="text-base md:text-lg text-slate-600 mb-8 max-w-xl mx-auto leading-relaxed">
+                    만들 수 있는 것보다 "만들어야 하는 것"에 집중합니다.<br />
+                    복잡한 절차를 걷어내고, 사용자가 직관적으로 쓸 수 있는 서비스를 지향합니다.
+                </p>
+
+                <!-- Contact Links Info -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-slate-600 w-full">
+                    <a href="https://github.com/dkksdfa" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 hover:text-indigo-600 transition-colors px-4 py-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <span class="font-medium">github.com/dkksdfa</span>
+                    </a>
+                    <div class="hidden sm:block w-px h-4 bg-slate-300"></div>
+                    <a href="mailto:tjdalstjdals100@gmail.com"
+                        class="flex items-center gap-2 hover:text-indigo-600 transition-colors px-4 py-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span class="font-medium">tjdalstjdals100@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-400">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl font-bold mb-8 flex items-center gap-3 text-slate-900 justify-center md:justify-start">
+                    <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
+                    About Me
+                </h2>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="space-y-6 text-slate-600 leading-relaxed">
+                        <p>
+                            <strong class="text-slate-900 text-lg block mb-2">"이 기능이 왜 필요한가?"</strong>
+                            저는 개발을 시작하기 전에 이 질문을 먼저 던지는 습관이 있습니다.
+                            단순히 기술적으로 구현 가능한 것과, 사용자가 필요로 하는 것은 다르다고 생각합니다.
+                            그래서 코드를 작성하기 전, 문제를 정확히 정의하고 전체적인 흐름을 단순화하는 과정에 시간을 쏟습니다.
+                        </p>
+                        <p>
+                            <strong class="text-slate-900 text-lg block mb-2">직관적인 사용자 경험</strong>
+                            개발 단계에서는 복잡한 절차를 과감히 덜어내고, 사용자가 화면을 보자마자 직관적으로 이해할 수 있는 UI/UX를 고민합니다.
+                            사용자가 고민하게 만드는 불친절한 기능은 결국 외면받는다는 생각으로,
+                            '설명서가 필요 없는 서비스'를 만드는 데 집중합니다.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                            <h4 class="font-semibold text-slate-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="search" class="w-4 h-4 text-indigo-500"></i> Problem Solver
+                            </h4>
+                            <p class="text-sm text-slate-500">불편함을 발견하고 기술로 해결책을 제시합니다.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                            <h4 class="font-semibold text-slate-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="user-check" class="w-4 h-4 text-indigo-500"></i> User Centric
+                            </h4>
+                            <p class="text-sm text-slate-500">사용자의 고민을 줄여주는 직관성을 추구합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Technical Skills</h2>
+                <p class="text-slate-500">프로젝트의 목적에 맞는 최적의 도구를 선택하여 사용합니다.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-400 transition-colors group shadow-sm hover:shadow-md">
+                    <div
+                        class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout" class="text-indigo-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Frontend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>TypeScript</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>React</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>Next.js (App Router)</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></span>Tailwind CSS</li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-400 transition-colors group shadow-sm hover:shadow-md">
+                    <div
+                        class="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="text-emerald-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Backend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>Node.js</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>Next.js API Routes</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-3"></span>Firebase</li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-orange-400 transition-colors group shadow-sm hover:shadow-md">
+                    <div
+                        class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="git-branch" class="text-orange-500 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">DevOps & Tools</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Git / GitHub</li>
+                        <li class="flex items-center text-slate-600"><span
+                                class="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Vercel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section (Gitfolio) -->
+    <section id="project" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+
+            <!-- Project Wrapper (Aligned with Single Column Layout) -->
+            <div class="max-w-5xl mx-auto">
+                <!-- Project Header & Info Bar -->
+                <div class="mb-16">
+                    <span class="text-indigo-600 font-semibold tracking-wider text-sm uppercase">Featured Project</span>
+                    <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-4">
+                        <a href="https://gitfolio02.vercel.app/" target="_blank"
+                            class="hover:text-indigo-600 transition-colors inline-flex items-center gap-3">
+                            Gitfolio
+                            <i data-lucide="external-link"
+                                class="w-8 h-8 text-slate-300 hover:text-indigo-600 transition-colors"></i>
+                        </a>
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mb-8">
+                        "개발자의 시간을 아껴주자"는 생각에서 시작된, GitHub 연동 원클릭 포트폴리오 생성 서비스
+                    </p>
+
+                    <!-- Integrated Project Metadata -->
+                    <div
+                        class="flex flex-wrap items-center gap-6 p-4 bg-white rounded-xl border border-slate-200 shadow-sm inline-flex">
+                        <!-- Role -->
+                        <div class="flex items-center gap-2 text-sm">
+                            <i data-lucide="user" class="w-4 h-4 text-slate-400"></i>
+                            <span class="font-bold text-slate-700">Role:</span>
+                            <span class="text-slate-600">1인 개발 (기획/디자인/개발)</span>
+                        </div>
+
+                        <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+
+                        <!-- Tech Stack -->
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="code" class="w-4 h-4 text-slate-400"></i>
+                            <div class="flex gap-1.5 flex-wrap">
+                                <span
+                                    class="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded">Next.js</span>
+                                <span
+                                    class="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded">TS</span>
+                                <span
+                                    class="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded">Tailwind</span>
+                                <span
+                                    class="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded">Firebase</span>
+                            </div>
+                        </div>
+
+                        <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+
+                        <!-- Links -->
+                        <div class="flex items-center gap-3">
+                            <a href="https://gitfolio02.vercel.app/"
+                                class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Website
+                            </a>
+                            <a href="https://github.com/dkksdfa/Gitfolio"
+                                class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+                                <i data-lucide="github" class="w-4 h-4"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Column Layout -->
+                <div class="space-y-20">
+
+                    <!-- Main Image Placeholder -->
+                    <div
+                        class="w-full bg-white rounded-xl overflow-hidden border border-slate-200 relative group shadow-md bg-pattern">
+                        <!-- Placeholder Content -->
+
+
+                        <!-- Actual Image -->
+                        <img src="/assets/gitfolio/main.png" alt="Project Screenshot"
+                            class="absolute inset-0 w-full h-auto" style="position: relative;" />
+                    </div>
+
+                    <!-- Problem & Solution -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-red-500 mb-4 flex items-center gap-2">
+                                <span class="bg-red-50 p-1.5 rounded text-sm">Problem</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                개발자로서 코드는 매일 업데이트되지만, 포트폴리오는 멈춰있는 경우가 많았습니다.
+                                GitHub의 기록을 다시 포트폴리오로 정리하는 과정은 번거롭고 반복적인 작업이었습니다.
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-emerald-500 mb-4 flex items-center gap-2">
+                                <span class="bg-emerald-50 p-1.5 rounded text-sm">Solution</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                복잡한 과정 없이 GitHub 연동 버튼 하나만 누르면 내 코드가 근사한 포트폴리오 사이트로 즉시 변환되는 경험을 설계했습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- System Architecture -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                            <span class="w-2 h-8 bg-indigo-600 rounded-sm"></span>
+                            System Architecture
+                        </h3>
+
+                        <!-- Architecture Diagram -->
+                        <div
+                            class="mb-10 w-full bg-slate-50 p-6 md:p-12 rounded-xl border border-slate-200 shadow-inner relative overflow-hidden">
+                            <!-- Background Grid Pattern -->
+                            <div class="absolute inset-0 bg-pattern opacity-30"></div>
+
+                            <div
+                                class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 text-sm max-w-4xl mx-auto">
+
+                                <!-- Step 1: Client -->
+                                <div class="flex flex-col items-center gap-3 min-w-[120px]">
+                                    <div
+                                        class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-indigo-200 shadow-sm relative">
+                                        <div
+                                            class="absolute -top-2 -right-2 bg-indigo-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                                            User</div>
+                                        <i data-lucide="monitor" class="text-indigo-600 w-8 h-8"></i>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="font-bold text-slate-800">Web Client</div>
+                                        <div class="text-xs text-slate-500">Next.js</div>
+                                    </div>
+                                </div>
+
+                                <!-- Arrow -->
+                                <div
+                                    class="hidden md:flex flex-1 h-px bg-slate-300 relative items-center justify-center">
+                                    <div class="absolute -top-3 text-xs text-slate-400 bg-slate-50 px-2 font-mono">
+                                        Request</div>
+                                    <i data-lucide="chevron-right"
+                                        class="absolute -right-1.5 -top-2 text-slate-300 w-4 h-4"></i>
+                                </div>
+                                <div class="md:hidden h-10 w-px bg-slate-300"></div>
+
+                                <!-- Step 2: Server Logic -->
+                                <div
+                                    class="flex flex-col gap-4 p-6 bg-white rounded-xl border border-slate-300 border-dashed min-w-[240px] shadow-sm relative">
+                                    <div
+                                        class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-100 text-slate-500 text-[10px] px-2 py-0.5 rounded border border-slate-200">
+                                        Server Logic</div>
+
+                                    <div
+                                        class="flex items-center gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                        <div class="bg-orange-100 p-2 rounded-lg">
+                                            <i data-lucide="git-branch" class="text-orange-500 w-4 h-4"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-xs">Data Fetcher</div>
+                                            <div class="text-[10px] text-slate-400">GitHub API</div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex items-center gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                        <div class="bg-blue-100 p-2 rounded-lg">
+                                            <i data-lucide="cpu" class="text-blue-500 w-4 h-4"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-xs">AI Analyzer</div>
+                                            <div class="text-[10px] text-slate-400">OpenAI API</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Arrow -->
+                                <div
+                                    class="hidden md:flex flex-1 h-px bg-slate-300 relative items-center justify-center">
+                                    <div class="absolute -top-3 text-xs text-slate-400 bg-slate-50 px-2 font-mono">
+                                        Process & Store</div>
+                                    <i data-lucide="chevron-right"
+                                        class="absolute -right-1.5 -top-2 text-slate-300 w-4 h-4"></i>
+                                </div>
+                                <div class="md:hidden h-10 w-px bg-slate-300"></div>
+
+                                <!-- Step 3: Database -->
+                                <div class="flex flex-col items-center gap-3 min-w-[120px]">
+                                    <div
+                                        class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-emerald-200 shadow-sm relative">
+                                        <div
+                                            class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                                            DB</div>
+                                        <i data-lucide="database" class="text-emerald-600 w-8 h-8"></i>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="font-bold text-slate-800">Database</div>
+                                        <div class="text-xs text-slate-500">Firebase</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="p-6 bg-slate-50 rounded-xl">
+                                <h4 class="text-indigo-600 font-bold mb-3 flex items-center gap-2">
+                                    <i data-lucide="layout" class="w-4 h-4"></i>
+                                    Frontend (View)
+                                </h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    화면과 서버 로직을 명확히 분리하고, 템플릿 확장을 위해 "데이터(Model)"와 "디자인(View)"을 분리하는 전략을 취했습니다.
+                                    동일한 데이터 모델을 여러 템플릿 컴포넌트에 주입하는 구조로 유연성을 확보했습니다.
+                                </p>
+                            </div>
+                            <div class="p-6 bg-slate-50 rounded-xl">
+                                <h4 class="text-indigo-600 font-bold mb-3 flex items-center gap-2">
+                                    <i data-lucide="server" class="w-4 h-4"></i>
+                                    Backend (Logic)
+                                </h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    <span class="font-medium text-slate-800">GitHub OAuth</span>로 인증 처리 후,
+                                    <span class="font-medium text-slate-800">GitHub API</span>로 원천 데이터를 확보합니다.
+                                    AI 분석 파이프라인을 거쳐 풍부한 설명 텍스트로 변환된 데이터는
+                                    <span class="font-medium text-slate-800">Firebase</span>에 저장되어 빠른 로딩을 보장합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                            <span class="w-2 h-8 bg-indigo-600 rounded-sm"></span>
+                            Key Features
+                        </h3>
+                        <div class="space-y-12">
+
+                            <!-- Feature 1 -->
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-yellow-50 p-3 rounded-xl shrink-0 mt-1">
+                                        <i data-lucide="zap" class="text-yellow-500 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-xl mb-2">원클릭 데이터 동기화</h4>
+                                        <p class="text-slate-600 leading-relaxed">
+                                            사용자의 GitHub 계정을 분석하여 소유 또는 기여한 모든 저장소(Repository)를 불러옵니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- GIF/Screenshot Slot -->
+                                <div
+                                    class="w-full aspect-video bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 overflow-hidden relative shadow-sm">
+                                    <img src="/assets/gitfolio/github_load.gif" alt="원클릭 데이터 동기화"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-blue-50 p-3 rounded-xl shrink-0 mt-1">
+                                        <i data-lucide="cpu" class="text-blue-500 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-xl mb-2">AI 기반 회고/요약</h4>
+                                        <p class="text-slate-600 leading-relaxed">
+                                            단순한 데이터 나열을 넘어, 생성형 AI가 각 프로젝트의 <strong>README.md 파일과 커밋 로그(Commit
+                                                History)</strong>를 심층 분석합니다.
+                                            이를 바탕으로 <strong>'프로젝트 개요', '핵심 기능', '나의 기여도'</strong>를 문장 형태로 자동 작성해 줍니다.
+                                            "무엇을 써야 할지" 막막한 초안 작성 단계를 AI가 해결해 주어, 사용자는 검토와 수정에만 집중할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- GIF/Screenshot Slot -->
+                                <div
+                                    class="w-full aspect-video bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 overflow-hidden relative shadow-sm">
+                                    <img src="/assets/gitfolio/ai_generation.gif" alt="원클릭 데이터 동기화"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-purple-50 p-3 rounded-xl shrink-0 mt-1">
+                                        <i data-lucide="layout" class="text-purple-500 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-xl mb-2">템플릿 즉시 교체</h4>
+                                        <p class="text-slate-600 leading-relaxed">
+                                            확보된 데이터와 디자인(View)을 완벽하게 분리했습니다.
+                                            <strong>'모던(Modern)', '클래식(Classic)', '미니멀(Minimal)'</strong> 등 다양한 템플릿을
+                                            데이터 손실 없이 즉시 교체할 수 있습니다. <br />
+                                            실시간 미리보기(Preview)를 통해 내 프로젝트 성격에 가장 잘 어울리는 디자인을 직관적으로 선택하세요.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- GIF/Screenshot Slot -->
+                                <div
+                                    class="w-full aspect-video bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 overflow-hidden relative shadow-sm">
+                                    <div class="flex flex-col items-center gap-2">
+                                        <img src="/assets/gitfolio/preview.gif" alt="원클릭 데이터 동기화"
+                                            class="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Demo Section (Moved Here) -->
+                    <div class="w-full bg-white rounded-xl overflow-hidden border border-slate-200 shadow-md">
+                        <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center gap-2">
+                            <i data-lucide="youtube" class="w-5 h-5 text-red-600"></i>
+                            <h3 class="font-bold text-slate-700">Project Demo</h3>
+                        </div>
+                        <!-- Aspect Ratio Container for Video (16:9) -->
+                        <div class="relative w-full aspect-video bg-slate-900">
+                            <!-- Youtube Embed Example -->
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/fFBCtjm1YvI" title="Project Demo Video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Retrospective & Future Plans (Unified Grid) -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Retrospective -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                                <span class="w-2 h-8 bg-slate-800 rounded-sm"></span>
+                                Retrospective
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                                    <h4 class="text-lg font-bold text-slate-900 mb-2">데이터 추상화와 재사용성</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        다양한 템플릿에 대응하기 위해 공통 인터페이스를 설계하며, View 변경이 Model에 영향을 주지 않도록 의존성을 분리했습니다.
+                                        유연한 아키텍처가 유지보수에 왜 중요한지 깊이 체감했습니다.
+                                    </p>
+                                </div>
+                                <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                                    <h4 class="text-lg font-bold text-slate-900 mb-2">외부 API 의존성 핸들링</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        API 지연이나 포맷 불일치 등 외부 요인에 의한 예외 처리를 강화하며, 서비스 안정성을 높이는 파이프라인 구축 경험을 쌓았습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Future Plans (Moved from Sidebar) -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                                <span class="w-2 h-8 bg-indigo-400 rounded-sm"></span>
+                                What's Next?
+                            </h3>
+                            <div
+                                class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-xl border border-indigo-100 shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="bg-white p-2 rounded-lg border border-indigo-100 shadow-sm">
+                                        <i data-lucide="terminal" class="w-6 h-6 text-indigo-600"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-indigo-900">AI Custom Template</h4>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    현재는 정해진 템플릿 중 선택하는 방식이지만, 향후에는
+                                    <span class="font-bold text-indigo-600">사용자 지정 프롬프트</span>
+                                    ("차분하고 전문적인 느낌으로 만들어줘")를 통해 레이아웃과 스타일을 동적으로 생성하는 기능을 개발 중입니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Get In Touch</h2>
+            <p class="text-slate-600 mb-12 max-w-xl mx-auto">
+                새로운 기술적 도전을 함께할 기회를 찾고 있습니다. <br />
+                프로젝트에 대해 더 이야기 나누고 싶으시다면 언제든 연락주세요.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="mailto:tjdalstjdals100@gmail.com"
+                    class="flex items-center gap-3 px-8 py-4 bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 text-slate-700 rounded-xl transition-all w-full md:w-auto justify-center group shadow-sm hover:shadow-md">
+                    <i data-lucide="mail"
+                        class="text-indigo-600 w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    <span>tjdalstjdals100@gmail.com</span>
+                </a>
+
+                <a href="https://github.com/dkksdfa" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 px-8 py-4 bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 text-slate-700 rounded-xl transition-all w-full md:w-auto justify-center group shadow-sm hover:shadow-md">
+                    <i data-lucide="github"
+                        class="text-slate-900 w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    <span>github.com/dkksdfa</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Background Decorations -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-3xl -z-10 opacity-60">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-50 border-t border-slate-200 text-center text-slate-500 text-sm">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="year"></span> Lee Seongmin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'shadow-sm');
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('py-4');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'shadow-sm');
+                navbar.classList.add('bg-transparent', 'py-6');
+                navbar.classList.remove('py-4');
+            }
+        });
+
+        // Smooth Scroll for Navigation
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+
+</html>
